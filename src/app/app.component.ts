@@ -12,19 +12,26 @@ export class AppComponent {
     dataSiswa : any = [];
 
     constructor() {
-        this.getData()
+        this.getData();
     }
 
     getData() {
         if(localStorage.getItem("data-siswa") !== null){
             this.dataSiswa = localStorage.getItem("data-siswa");
         }
-        // localStorage.setItem("data-siswa",JSON.stringify({...JSON.parse(localStorage.getItem("data-siswa")),promo: 'this.couponItem'}));
     }
 
     simpanData() {
-        this.dataSiswa.push({nama:this.nama,jurusan:this.jurusan})
-        console.log(this.dataSiswa)
-        // localStorage.setItem("data-siswa",JSON.stringify(this.dataSiswa));
+        this.dataSiswa.push({
+            nama:this.nama,
+            jurusan:this.jurusan
+        });
+        localStorage.setItem("data-siswa",JSON.stringify(this.dataSiswa));
+        this.reset();
+    }
+
+    reset() {
+        this.nama = '';
+        this.jurusan = '';
     }
 }
