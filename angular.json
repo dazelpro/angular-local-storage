@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-local-storage"
+    }
+  },
+  "defaultProject": "angular-local-storage",
+  "cli": {
+    "analytics": false
+  }
 }
