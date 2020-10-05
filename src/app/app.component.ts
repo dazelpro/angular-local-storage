@@ -14,6 +14,7 @@ export class AppComponent {
     constructor() {
         this.getData();
     }
+    
     getData() {
         if(localStorage.getItem("data_siswa") !== null){
             this.dataSiswa = JSON.parse(localStorage.getItem("data_siswa"));
