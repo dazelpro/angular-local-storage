@@ -14,19 +14,21 @@ export class AppComponent {
     constructor() {
         this.getData();
     }
-
     getData() {
-        if(localStorage.getItem("data-siswa") !== null){
-            this.dataSiswa = localStorage.getItem("data-siswa");
+        if(localStorage.getItem("data_siswa") !== null){
+            this.dataSiswa = JSON.parse(localStorage.getItem("data_siswa"));
+        }else{
+            this.dataSiswa['item'] = [];
         }
     }
 
     simpanData() {
-        this.dataSiswa.push({
+        this.dataSiswa['item'].push({
             nama:this.nama,
             jurusan:this.jurusan
         });
-        localStorage.setItem("data-siswa",JSON.stringify(this.dataSiswa));
+        localStorage.clear();
+        localStorage.setItem("data_siswa",JSON.stringify({item:this.dataSiswa['item']}));
         this.reset();
     }
 

@@ -24,8 +24,10 @@
         <th>Nama</th>
         <th>Jurusan</th>
     </tr>
-    <tr *ngFor="let data of dataSiswa">
-        <td align="center">{{data.nama}}</td>
-        <td align="center">{{data.jurusan}}</td>
-    </tr>
+    <tbody *ngFor="let d of dataSiswa['item']">
+        <tr>
+            <td align="center">{{d.nama}}</td>
+            <td align="center">{{d.jurusan}}</td>
+        </tr>
+    </tbody>
 </table>
